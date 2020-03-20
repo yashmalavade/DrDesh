@@ -1,0 +1,433 @@
+<div id="wrapper">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <i class="fa fa-user-secret fa-3x" aria-hidden="true"></i>
+      <h2>Hello, Admin</h2>
+    </div>
+    <ul class="sidebar-nav">
+      <p class="qd">Quick Dashboard</p>
+      <li>
+        <a href="#"><i class="fa fa-plus-circle"></i>Add Patient</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-users"></i>Add Facility</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-calendar-times-o"></i>Add Provider</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-university"></i>Add Insurance</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-medkit"></i>Expensive Medicines</a>
+      </li>
+    </ul>
+  </aside>
+
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle"
+            ><i class="fa fa-bars" style="color: #87C442;"></i
+          ></a>
+        </div>
+        <div style="float: right;">
+          <img src="/assets/img/dash/logout.png" height="50px" class="logout" />
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <section id="content-wrapper" style=" padding-left: 0rem;  ">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="content-title">Patient</h2>
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div
+            class="modal-dialog modal-dialog-centered modal-lg"
+            role="document"
+          >
+            <div class="modal-content">
+              <div class="modal-header" style="border: none; ">
+                <h5
+                  class="modal-title"
+                  id="exampleModalLongTitle"
+                  style="margin: 0 auto;"
+                >
+                  Add Patient
+                </h5>
+              </div>
+              <div class="modal-body" style="border: none;margin: 0 auto;">
+                <form class="form-inline">
+                  <label for="name">Name</label>&nbsp;
+                  <input
+                    type="text"
+                    class="inName"
+                    name="name"
+                    size="35"
+                  />&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label for="pwd">Date of Birth</label>&nbsp;
+                  <input type="date" class="inDob" name="dob" />&nbsp;<i
+                    class="fa fa-calendar"
+                    style="font-size:25px;color: #8bc24a;;"
+                  ></i>
+                </form>
+              </div>
+              <div class="modal-footer" style="border: none;margin: 0 auto;">
+                <div>
+                  <button
+                    type="button"
+                    class="btnAdd"
+                    style="align-content: center;"
+                  >
+                    Add</button
+                  >&nbsp;&nbsp;&nbsp;
+                  <button type="button" class="btnCancel" data-dismiss="modal">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="btnAddPatient"
+          data-toggle="modal"
+          data-target="#exampleModalCenter"
+        >
+          Add Patient
+        </button>
+
+        <button
+          type="button"
+          class="btnAddPatient"
+          data-toggle="modal"
+          data-target="#exampleModalCenterUpdate"
+        >
+          Update Patient
+        </button>
+
+        <div
+          class="modal fade"
+          id="exampleModalCenterUpdate"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header" style="border: none; ">
+                <h5
+                  class="modal-title"
+                  id="exampleModalLongTitle"
+                  style="margin: 0 auto;"
+                >
+                  Update Patient Details
+                </h5>
+              </div>
+              <div class="modal-body" style="border: none; ">
+                <form>
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label"
+                      >Patient's Insurance</label
+                    >
+                    <div class="col-sm-8">
+                      <select id="inputState" class="form-control">
+                        <option selected>None</option>
+                        <option>Primary</option>
+                        <option>Secondary</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label"
+                      >Facility Location</label
+                    >
+                    <div class="col-sm-8">
+                      <select id="inputState" class="form-control">
+                        <option selected>None</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Room Number</label>
+                    <div class="col-sm-8">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputPassword4"
+                        placeholder="Enter Room Number"
+                      />
+                    </div>
+                  </div>
+
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-8 pt-0">
+                        Is on Expensive Medicine ?
+                      </legend>
+                      <div class="col-sm-4">
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="customRadioInline1"
+                            name="customRadioInline1"
+                            class="custom-control-input"
+                            checked
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customRadioInline1"
+                            >Yes</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="customRadioInline2"
+                            name="customRadioInline1"
+                            class="custom-control-input"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customRadioInline2"
+                            >No</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-8 pt-0">
+                        Generic Testing Performed
+                      </legend>
+                      <div class="col-sm-4">
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="testing"
+                            name="testing"
+                            class="custom-control-input"
+                            checked
+                          />
+                          <label class="custom-control-label" for="testing"
+                            >Yes</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="testing1"
+                            name="testing"
+                            class="custom-control-input"
+                          />
+                          <label class="custom-control-label" for="testing1"
+                            >No</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-8 pt-0">
+                        Primary Doctor's Order Uploaded ?
+                      </legend>
+                      <div class="col-sm-4">
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="order"
+                            name="order"
+                            class="custom-control-input"
+                            checked
+                          />
+                          <label class="custom-control-label" for="order"
+                            >Yes</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="order1"
+                            name="order"
+                            class="custom-control-input"
+                          />
+                          <label class="custom-control-label" for="order1"
+                            >No</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-8 pt-0">
+                        Demographic Sheet Uploaded ?
+                      </legend>
+                      <div class="col-sm-4">
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="sheet"
+                            name="sheet"
+                            class="custom-control-input"
+                            checked
+                          />
+                          <label class="custom-control-label" for="sheet"
+                            >Yes</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="sheet1"
+                            name="sheet"
+                            class="custom-control-input"
+                          />
+                          <label class="custom-control-label" for="sheet1"
+                            >No</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-8 pt-0">
+                        Capacity Assessment Performed ?
+                      </legend>
+                      <div class="col-sm-4">
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="assessment"
+                            name="assessment"
+                            class="custom-control-input"
+                            checked
+                          />
+                          <label class="custom-control-label" for="assessment"
+                            >Yes</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="assessment1"
+                            name="assessment"
+                            class="custom-control-input"
+                          />
+                          <label class="custom-control-label" for="assessment1"
+                            >No</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-8 pt-0">
+                        Is Eligible for Scales ?
+                      </legend>
+                      <div class="col-sm-4">
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="scales"
+                            name="scales"
+                            class="custom-control-input"
+                            checked
+                          />
+                          <label class="custom-control-label" for="scales"
+                            >Yes</label
+                          >
+                        </div>
+                        <div
+                          class="custom-control custom-radio custom-control-inline"
+                        >
+                          <input
+                            type="radio"
+                            id="scales1"
+                            name="scales"
+                            class="custom-control-input"
+                          />
+                          <label class="custom-control-label" for="scales1"
+                            >No</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <div class="form-group row">
+                    <label class="col-sm-8 col-form-label"
+                      >Which Scales are done ?</label
+                    >
+                    <div class="col-sm-4">
+                      <select id="inputState" class="form-control">
+                        <option selected>None</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer" style="border: none;margin: 0 auto;">
+                <button
+                  type="button"
+                  class="btnAdd"
+                  style="align-content: center;"
+                >
+                  Submit
+                </button>
+                <button type="button" class="btnCancel" data-dismiss="modal">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box"></div>
+      </div>
+    </div>
+  </section>
+  <img
+    src="/assets/img/login/logo.png"
+    height="200px"
+    style="position: fixed; right: 0; bottom: 0; padding: 50px;"
+  />
+</div>
